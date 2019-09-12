@@ -18,53 +18,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey Bee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72F-zF-e8n">
-                                <rect key="frame" x="115" y="108" width="185" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honey Bee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72F-zF-e8n">
+                                <rect key="frame" x="119" y="74" width="178" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="1" green="0.88312072320000001" blue="0.1324596706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEW-hc-xzf">
-                                <rect key="frame" x="62" y="206" width="89" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <size key="titleShadowOffset" width="2" height="0.0"/>
-                                <state key="normal" title="Comb">
-                                    <color key="titleColor" red="1" green="0.88312072316515733" blue="0.13245967058147035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8m-uS-JmM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-B0-4YV">
-                                <rect key="frame" x="227" y="206" width="113" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <size key="titleShadowOffset" width="2" height="0.0"/>
-                                <state key="normal" title="Drawing">
-                                    <color key="titleColor" red="1" green="0.88312072320000001" blue="0.1324596706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5X4-GN-Px8"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bee" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-s0-Cep">
-                                <rect key="frame" x="20" y="250" width="374" height="397"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEu-8d-iJo">
-                                <rect key="frame" x="115" y="627" width="185" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-f0-yp4">
+                                <rect key="frame" x="76" y="145" width="262" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEW-hc-xzf">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="2" height="0.0"/>
+                                        <state key="normal" title="Comb">
+                                            <color key="titleColor" red="1" green="0.88312072316515733" blue="0.13245967058147035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8m-uS-JmM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-B0-4YV">
+                                        <rect key="frame" x="155" y="0.0" width="107" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="2" height="0.0"/>
+                                        <state key="normal" title="Drawing">
+                                            <color key="titleColor" red="1" green="0.88312072320000001" blue="0.1324596706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5X4-GN-Px8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEu-8d-iJo">
+                                <rect key="frame" x="188" y="511" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="bee" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-s0-Cep">
+                                <rect key="frame" x="19" y="213" width="376" height="279"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="280" id="XVQ-SL-kB4"/>
+                                    <constraint firstAttribute="width" secondItem="yuc-s0-Cep" secondAttribute="height" multiplier="376:279" id="rBy-Y6-Z2U"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bEu-8d-iJo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="59z-U6-fWG"/>
+                            <constraint firstItem="72F-zF-e8n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="8HP-Ic-poX"/>
+                            <constraint firstItem="bEu-8d-iJo" firstAttribute="top" secondItem="yuc-s0-Cep" secondAttribute="bottom" constant="20" id="IA7-vf-9Xh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yuc-s0-Cep" secondAttribute="trailing" constant="19" id="Icf-4Y-80w"/>
+                            <constraint firstItem="72F-zF-e8n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="PJE-Se-SZP"/>
+                            <constraint firstItem="yuc-s0-Cep" firstAttribute="top" secondItem="Rgw-f0-yp4" secondAttribute="bottom" constant="20" id="Y0h-fw-DbG"/>
+                            <constraint firstItem="bEu-8d-iJo" firstAttribute="centerX" secondItem="Rgw-f0-yp4" secondAttribute="centerX" id="ZgE-n3-R1e"/>
+                            <constraint firstItem="yuc-s0-Cep" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hOz-UI-Q83"/>
+                            <constraint firstItem="Rgw-f0-yp4" firstAttribute="top" secondItem="72F-zF-e8n" secondAttribute="bottom" constant="24" id="qek-3u-7O8"/>
+                            <constraint firstItem="yuc-s0-Cep" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="sjS-Zl-SC3"/>
+                            <constraint firstItem="Rgw-f0-yp4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tWB-xX-5D8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>

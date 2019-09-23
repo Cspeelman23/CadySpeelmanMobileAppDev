@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honey Bee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72F-zF-e8n">
-                                <rect key="frame" x="119" y="74" width="178" height="47"/>
+                                <rect key="frame" x="119" y="74" width="178" height="46.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="1" green="0.88312072320000001" blue="0.1324596706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-f0-yp4">
-                                <rect key="frame" x="76" y="145" width="262" height="48"/>
+                                <rect key="frame" x="76" y="144.5" width="262" height="48"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEW-hc-xzf">
                                         <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
@@ -55,13 +55,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEu-8d-iJo">
-                                <rect key="frame" x="188" y="511" width="39" height="21"/>
+                                <rect key="frame" x="187.5" y="511.5" width="39" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="bee" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-s0-Cep">
-                                <rect key="frame" x="19" y="213" width="376" height="279"/>
+                                <rect key="frame" x="19" y="212.5" width="376" height="279"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="280" id="XVQ-SL-kB4"/>
                                     <constraint firstAttribute="width" secondItem="yuc-s0-Cep" secondAttribute="height" multiplier="376:279" id="rBy-Y6-Z2U"/>

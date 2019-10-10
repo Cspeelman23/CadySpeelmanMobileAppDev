@@ -71,7 +71,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if(sauceModule == 1 && cheeseModule == 1 && toppingsModule == 1) && slicesModule == 1{
             //alert win
             let alert = UIAlertController(title: "You Won!", message: "Play Again?", preferredStyle: UIAlertController.Style.alert)
-            let nextAction = UIAlertAction(title: "New Level", style: UIAlertAction.Style.default, handler:{action in // basically reset storyboard except it wont let me
+            let nextAction = UIAlertAction(title: "New Level", style: UIAlertAction.Style.default, handler:{action in
+                // basically reset storyboard except it wont let me
                 self.sauceModule = 0
                 self.cheeseModule = 0
                 self.toppingsModule = 0
@@ -81,8 +82,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 self.slicesModule = 0
                 self.sauceVal = Double.random(in: 0 ... 10)
                 self.cheeses = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone", "None"]
-                self.cheeseVal = self.cheeses.randomElement() // lazy because "property initializers run before self is available"
-                self.pepperoniTopVal = Int.random(in: 0 ... 2)//0 = light, 1 = regular, 2 = extra
+                self.cheeseVal = self.cheeses.randomElement()
+                self.pepperoniTopVal = Int.random(in: 0 ... 2)
                 self.mushroomTopVal = Int.random(in: 0 ... 2)
                 self.pepperTopVal = Int.random(in: 0 ... 2)
                 self.slicesVal = Int.random(in: 0 ... 6)*2
@@ -92,8 +93,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 self.slicesModImg.image=UIImage(named: "neutral")
                 self.sauceImg.alpha = 0;
                 self.cheeseImg.image = UIImage(named: "None")
-                self.cheeseTypes[0] = " "
-                
                 self.pepperoniImg.image = UIImage(named: "pepperoniNone")
                 self.mushroomImg.image = UIImage(named: "mushroomNone")
                 self.peppersImg.image = UIImage(named: "peppersNone")

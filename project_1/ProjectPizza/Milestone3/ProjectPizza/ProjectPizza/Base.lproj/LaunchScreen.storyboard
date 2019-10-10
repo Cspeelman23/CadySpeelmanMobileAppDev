@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Haq-40-M6R">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="982" height="1200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1200" id="23M-cc-pOe"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="800" id="b6N-pg-HO6"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="982" id="b6N-pg-HO6"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="51.5625" y="373.91304347826087"/>
         </scene>
     </scenes>
     <resources>

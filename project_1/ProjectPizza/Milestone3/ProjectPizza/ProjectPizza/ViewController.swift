@@ -8,20 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    // adopt ui picker deligate and ui data source
-    // chapter 12
-    
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
     //--sauce
     @IBOutlet weak var sauceImg: UIImageView!
     @IBOutlet weak var sauceModImg: UIImageView!
-    
     //--cheese
+    @IBOutlet weak var cheeseSwitch: UISwitch!
+    @IBOutlet weak var cheesePicker: UIPickerView!
+    var cheeseTypes: [String] = [String]()
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cheeseTypes.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cheeseTypes[row]
+    }
+    @IBOutlet weak var cheeseModImg: UIImageView!
     //--toppings
     @IBOutlet weak var pepperoniImg: UIImageView!
     @IBOutlet weak var mushroomImg: UIImageView!
     @IBOutlet weak var peppersImg: UIImageView!
-    
     @IBOutlet weak var pepperoniSeg: UISegmentedControl!
     @IBOutlet weak var mushroomSeg: UISegmentedControl!
     @IBOutlet weak var pepperSeg: UISegmentedControl!
@@ -33,26 +43,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var slicesModImg: UIImageView!
     //--
     
-    //RANDOM NUMBERS
+    
+    
+    //RANDOM NUMBERS -------------------------
     //https://learnappmaking.com/random-numbers-swift/
     let sauceVal = Double.random(in: 0 ... 10)
-    
+    let cheeses = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone", "None"]
+    lazy var cheeseVal = cheeses.randomElement() // lazy because "property initializers run before self is available"
     let pepperoniTopVal = Int.random(in: 0 ... 2)//0 = light, 1 = regular, 2 = extra
     let mushroomTopVal = Int.random(in: 0 ... 2)
     let pepperTopVal = Int.random(in: 0 ... 2)
     let slicesVal = Int.random(in: 0 ... 6)*2
     
+    let testCheese = "Parmesan"
     
     
-    
-    //ANSWER CHECKING AREA
+    //ANSWER CHECKING AREA -------------------------
     //0 for not complete, 1 if correct
     var sauceModule = 0
     
     var toppingsModule = 0
-    var Top1 = 0
-    var Top2 = 0
-    var Top3 = 0
+    var Top1 = 0 //bool for pepperoni
+    var Top2 = 0 //bool for mushroom
+    var Top3 = 0 //bool for peppers
     var slicesModule = 0
     
     // checking for completion on each new input
@@ -66,7 +79,9 @@ class ViewController: UIViewController {
     //    }
     }
     
-    //SAUCE MODULE
+    
+    
+    //SAUCE MODULE -------------------------
     //https://www.youtube.com/watch?v=5I0oJ7kUFm0
     @IBAction func sauceSlider(_ sender: UISlider) { //0-10 in doubles
         let sauceAmt=sender.value //float
@@ -82,11 +97,23 @@ class ViewController: UIViewController {
     }
     
     
-    //CHEESE MODULE
+    
+    //CHEESE MODULE -------------------------
+    //https://www.youtube.com/watch?v=BOgqcAcZCnI
+    // adopt ui picker deligate and ui data source
+    // chapter 12
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(cheeseTypes[row] == testCheese){
+            cheeseModImg.image=UIImage(named: "happy")
+        }else{
+            cheeseModImg.image=UIImage(named: "neutral")
+        }
+    }
+
     
     
     
-    //TOPPINGS MODULE
+    //TOPPINGS MODULE -------------------------
     @IBAction func pepperoniAmtControl(_ sender: UISegmentedControl) {
         if(sender.selectedSegmentIndex == pepperoniTopVal){
             //if selected segment is correct
@@ -161,7 +188,9 @@ class ViewController: UIViewController {
     }
     
     
-    //SLICES MODULE
+    
+    
+    //SLICES MODULE -------------------------
     @IBAction func slicePizzaCutter(_ sender: UIStepper) {
         let numSlices = String(Int(sender.value)) + "slices"
         slicesImg.image=UIImage(named: numSlices)
@@ -180,11 +209,14 @@ class ViewController: UIViewController {
     
     
     
-    
+    // -------------------------
     override func viewDidLoad() {
-        print(slicesVal)
-        checkAns()
+        
         super.viewDidLoad()
+        cheesePicker.delegate = self
+        cheesePicker.dataSource = self
+        cheeseTypes = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone"]
+        print(slicesVal)
         // Do any additional setup after loading the view.
     }
     

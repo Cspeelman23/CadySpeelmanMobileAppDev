@@ -28,12 +28,13 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6tp-6E-ZS8">
                                 <rect key="frame" x="47" y="437" width="236" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.89007852980000002" green="0.20562338390000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sauceSlider:" destination="X5O-M5-BLk" eventType="valueChanged" id="sce-Vb-hmC"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heavy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-hC-SRS">
-                                <rect key="frame" x="224" y="464" width="57" height="27"/>
+                                <rect key="frame" x="240" y="464" width="57" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -66,27 +67,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4S-S7-1gc">
-                                <rect key="frame" x="32" y="785" width="94" height="27"/>
+                                <rect key="frame" x="32" y="785" width="94" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mX-2I-6ba">
-                                <rect key="frame" x="325" y="782" width="57" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tf8-Am-AVH">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="12" stepValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="tf8-Am-AVH">
                                 <rect key="frame" x="136" y="801" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="slicePizzaCutter:" destination="X5O-M5-BLk" eventType="valueChanged" id="yN3-FM-qTe"/>
+                                </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCL-t8-O1a">
-                                <rect key="frame" x="270" y="805" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCL-t8-O1a">
+                                <rect key="frame" x="281" y="805" width="26" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="neutral" translatesAutoresizingMaskIntoConstraints="NO" id="1mX-2I-6ba" userLabel="slicesModImg">
+                                <rect key="frame" x="325" y="790" width="57" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toppings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky5-UZ-lGv">
                                 <rect key="frame" x="32" y="619" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,7 +106,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LRV-nw-KTp">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="LRV-nw-KTp">
                                 <rect key="frame" x="120" y="654" width="187" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -109,6 +114,9 @@
                                     <segment title="Regular"/>
                                     <segment title="Extra"/>
                                 </segments>
+                                <connections>
+                                    <action selector="pepperoniAmtControl:" destination="X5O-M5-BLk" eventType="valueChanged" id="y7S-4T-2u6"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mushroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHO-xC-Yxn">
                                 <rect key="frame" x="32" y="699" width="82" height="21"/>
@@ -117,7 +125,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="reD-Y0-d7F">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="reD-Y0-d7F">
                                 <rect key="frame" x="120" y="696" width="187" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -125,6 +133,9 @@
                                     <segment title="Regular"/>
                                     <segment title="Extra"/>
                                 </segments>
+                                <connections>
+                                    <action selector="mushroomAmtControl:" destination="X5O-M5-BLk" eventType="valueChanged" id="hlt-qm-Azk"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peppers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrX-CL-G0m">
                                 <rect key="frame" x="32" y="740" width="64" height="21"/>
@@ -133,7 +144,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-lb-Lh5">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-lb-Lh5">
                                 <rect key="frame" x="120" y="740" width="187" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -141,8 +152,11 @@
                                     <segment title="Regular"/>
                                     <segment title="Extra"/>
                                 </segments>
+                                <connections>
+                                    <action selector="pepperAmtControl:" destination="X5O-M5-BLk" eventType="valueChanged" id="d41-P1-qmQ"/>
+                                </connections>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-Pi-uzt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="neutral" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-Pi-uzt" userLabel="ToppingsModImg">
                                 <rect key="frame" x="326" y="676" width="56" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -164,7 +178,11 @@
                                 <rect key="frame" x="77" y="109" width="253" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sauce" translatesAutoresizingMaskIntoConstraints="NO" id="gWc-XI-Cqz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0slices" translatesAutoresizingMaskIntoConstraints="NO" id="x5K-ZG-4B5" userLabel="slicesImg">
+                                <rect key="frame" x="77" y="109" width="253" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sauce" translatesAutoresizingMaskIntoConstraints="NO" id="gWc-XI-Cqz" userLabel="sauceImg">
                                 <rect key="frame" x="85" y="116" width="236" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -172,13 +190,36 @@
                                 <rect key="frame" x="326" y="424" width="56" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pepperoniNone" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-XU-B2j" userLabel="PepperoniImg">
+                                <rect key="frame" x="97" y="122" width="220" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="peppersNone" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-Kc-nWq" userLabel="PeppersImg">
+                                <rect key="frame" x="98" y="128" width="210" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mushroomNone" translatesAutoresizingMaskIntoConstraints="NO" id="fQ1-ZH-cXV" userLabel="MushroomImg">
+                                <rect key="frame" x="115" y="138" width="184" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fgh-NE-XCx"/>
                     </view>
                     <connections>
+                        <outlet property="mushroomImg" destination="fQ1-ZH-cXV" id="4z5-3i-gSr"/>
+                        <outlet property="mushroomSeg" destination="reD-Y0-d7F" id="Mbj-iL-bMS"/>
+                        <outlet property="pepperSeg" destination="eN8-lb-Lh5" id="nZ4-Ab-yXC"/>
+                        <outlet property="pepperoniImg" destination="JJb-XU-B2j" id="zjr-5F-YI0"/>
+                        <outlet property="pepperoniSeg" destination="LRV-nw-KTp" id="frn-Kf-07l"/>
+                        <outlet property="peppersImg" destination="hgb-Kc-nWq" id="ekQ-42-Yan"/>
                         <outlet property="sauceImg" destination="gWc-XI-Cqz" id="ARZ-yJ-qN7"/>
                         <outlet property="sauceModImg" destination="gr2-oL-eH1" id="Mwn-nd-nDr"/>
+                        <outlet property="sliceStepper" destination="tf8-Am-AVH" id="i39-4i-4Oo"/>
+                        <outlet property="slicesImg" destination="x5K-ZG-4B5" id="RG9-7o-4L5"/>
+                        <outlet property="slicesModImg" destination="1mX-2I-6ba" id="0uK-YD-0RF"/>
+                        <outlet property="slicesNum" destination="XCL-t8-O1a" id="2t2-Nd-J88"/>
+                        <outlet property="toppingsModImg" destination="J7s-Pi-uzt" id="VzE-UR-3Dg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fF-LZ-aB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -187,8 +228,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0slices" width="1308" height="11"/>
         <image name="base" width="1308" height="1308"/>
+        <image name="mushroomNone" width="145" height="144"/>
         <image name="neutral" width="504" height="504"/>
+        <image name="pepperoniNone" width="145" height="144"/>
+        <image name="peppersNone" width="145" height="144"/>
         <image name="sauce" width="1232" height="1232"/>
     </resources>
 </document>

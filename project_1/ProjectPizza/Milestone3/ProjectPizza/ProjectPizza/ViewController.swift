@@ -14,13 +14,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var sauceImg: UIImageView!
     @IBOutlet weak var sauceModImg: UIImageView!
     //--cheese
-    @IBOutlet weak var cheeseSwitch: UISwitch!
+    @IBOutlet weak var cheeseImg: UIImageView!
     @IBOutlet weak var cheesePicker: UIPickerView!
     var cheeseTypes: [String] = [String]()
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return cheeseTypes.count
     }
@@ -47,21 +46,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //RANDOM NUMBERS -------------------------
     //https://learnappmaking.com/random-numbers-swift/
-    let sauceVal = Double.random(in: 0 ... 10)
-    let cheeses = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone", "None"]
+    var sauceVal = Double.random(in: 0 ... 10)
+    var cheeses = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone", "None"]
     lazy var cheeseVal = cheeses.randomElement() // lazy because "property initializers run before self is available"
-    let pepperoniTopVal = Int.random(in: 0 ... 2)//0 = light, 1 = regular, 2 = extra
-    let mushroomTopVal = Int.random(in: 0 ... 2)
-    let pepperTopVal = Int.random(in: 0 ... 2)
-    let slicesVal = Int.random(in: 0 ... 6)*2
-    
-    let testCheese = "Parmesan"
+    var pepperoniTopVal = Int.random(in: 0 ... 2)//0 = light, 1 = regular, 2 = extra
+    var mushroomTopVal = Int.random(in: 0 ... 2)
+    var pepperTopVal = Int.random(in: 0 ... 2)
+    var slicesVal = Int.random(in: 0 ... 6)*2
     
     
     //ANSWER CHECKING AREA -------------------------
     //0 for not complete, 1 if correct
     var sauceModule = 0
-    
+    var cheeseModule = 0
     var toppingsModule = 0
     var Top1 = 0 //bool for pepperoni
     var Top2 = 0 //bool for mushroom
@@ -70,13 +67,48 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // checking for completion on each new input
     func checkAns() {
- 
-    
-    //cheese selected in selectedRow in component 0
-    //call check on...input?
-    //    if(sauceModule == 1 && cheeseModule == 1 && toppingsModule == 1) && slicesModule == 1{
-    //        //alert win
-    //    }
+    //call this ftn to check on each new input
+        if(sauceModule == 1 && cheeseModule == 1 && toppingsModule == 1) && slicesModule == 1{
+            //alert win
+            let alert = UIAlertController(title: "You Won!", message: "Play Again?", preferredStyle: UIAlertController.Style.alert)
+            let nextAction = UIAlertAction(title: "New Level", style: UIAlertAction.Style.default, handler:{action in // basically reset storyboard except it wont let me
+                self.sauceModule = 0
+                self.cheeseModule = 0
+                self.toppingsModule = 0
+                self.Top1 = 0 //bool for pepperoni
+                self.Top2 = 0 //bool for mushroom
+                self.Top3 = 0 //bool for peppers
+                self.slicesModule = 0
+                self.sauceVal = Double.random(in: 0 ... 10)
+                self.cheeses = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone", "None"]
+                self.cheeseVal = self.cheeses.randomElement() // lazy because "property initializers run before self is available"
+                self.pepperoniTopVal = Int.random(in: 0 ... 2)//0 = light, 1 = regular, 2 = extra
+                self.mushroomTopVal = Int.random(in: 0 ... 2)
+                self.pepperTopVal = Int.random(in: 0 ... 2)
+                self.slicesVal = Int.random(in: 0 ... 6)*2
+                self.sauceModImg.image=UIImage(named: "neutral")
+                self.cheeseModImg.image=UIImage(named: "neutral")
+                self.toppingsModImg.image=UIImage(named: "neutral")
+                self.slicesModImg.image=UIImage(named: "neutral")
+                self.sauceImg.alpha = 0;
+                self.cheeseImg.image = UIImage(named: "None")
+                self.cheeseTypes[0] = " "
+                
+                self.pepperoniImg.image = UIImage(named: "pepperoniNone")
+                self.mushroomImg.image = UIImage(named: "mushroomNone")
+                self.peppersImg.image = UIImage(named: "peppersNone")
+                self.pepperoniSeg.selectedSegmentIndex = UISegmentedControl.noSegment
+                self.mushroomSeg.selectedSegmentIndex = UISegmentedControl.noSegment
+                self.pepperSeg.selectedSegmentIndex = UISegmentedControl.noSegment
+                self.sliceStepper.value = 0
+                self.slicesNum.text = "0"
+                self.slicesImg.image = UIImage(named: "0slices")
+                
+                
+            })
+            alert.addAction(nextAction)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -103,11 +135,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // adopt ui picker deligate and ui data source
     // chapter 12
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(cheeseTypes[row] == testCheese){
+        if(cheeseTypes[row] == cheeseVal){//string compare selected to random
             cheeseModImg.image=UIImage(named: "happy")
+            cheeseModule = 1
         }else{
             cheeseModImg.image=UIImage(named: "neutral")
+            cheeseModule = 0
         }
+        cheeseImg.image = UIImage(named: cheeseTypes[row])//is string
     }
 
     
@@ -215,8 +250,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
         cheesePicker.delegate = self
         cheesePicker.dataSource = self
-        cheeseTypes = ["Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone"]
-        print(slicesVal)
+        cheeseTypes = [" ", "Cheddar", "Colbyjack", "Mozzarella", "Parmesan", "Provolone", "None"]
+        
+        print(cheeseVal!)
         // Do any additional setup after loading the view.
     }
     

@@ -16,9 +16,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var reportGasNeeded: UILabel!
     @IBOutlet weak var monthlySwitch: UISwitch!
     @IBOutlet weak var gallonsInTank: UILabel!
+    @IBOutlet weak var transportImg: UIImageView!
+    @IBOutlet weak var transportSegControl: UISegmentedControl!
     
     
     
+    
+    @IBAction func changeTransport(_ sender: UISegmentedControl) {
+        if transportSegControl.selectedSegmentIndex == 0 {
+            transportImg.image=UIImage(named: "car_icon")
+        }
+        else if (transportSegControl.selectedSegmentIndex == 1 ){
+            transportImg.image=UIImage(named: "bus_icon")
+        }else if (transportSegControl.selectedSegmentIndex == 2){
+            
+        }
+    }
     
     @IBAction func tankSlider(_ sender: UISlider) {
         let tankVal=sender.value //float

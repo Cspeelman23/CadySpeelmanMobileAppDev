@@ -122,6 +122,9 @@
                                     <segment title="Bus"/>
                                     <segment title="Bike"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeTransport:" destination="BYZ-38-t0r" eventType="valueChanged" id="cCS-MX-JC4"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,6 +136,8 @@
                         <outlet property="monthlySwitch" destination="4Pb-lA-bsr" id="1Ij-ba-cUq"/>
                         <outlet property="reportCommuteTime" destination="0Eb-Vt-XU3" id="0ur-bT-JaC"/>
                         <outlet property="reportGasNeeded" destination="Ngp-C8-5rw" id="QpX-hy-X5Z"/>
+                        <outlet property="transportImg" destination="Vyh-94-9Lv" id="hqx-o8-9fE"/>
+                        <outlet property="transportSegControl" destination="o6V-s4-W6N" id="xOE-SL-b9g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

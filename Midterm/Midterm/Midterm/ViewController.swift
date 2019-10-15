@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var commuteMiles: UITextField!
     @IBOutlet weak var reportCommuteTime: UILabel!
     @IBOutlet weak var reportGasNeeded: UILabel!
-    
+    @IBOutlet weak var monthlySwitch: UISwitch!
     @IBOutlet weak var gallonsInTank: UILabel!
     
     
@@ -29,6 +29,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateCommute()
     }
     @IBAction func monthlySwitch(_ sender: Any) {
+        //20 work days, multiply totals by 20
+        updateCommute()
     }
     
     
@@ -37,21 +39,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //time= distance/speed (avg 20 mi/hr)
         if(commuteMiles.text!.isEmpty){ //no input, default to zero
             reportCommuteTime.text = "0 mins"
-        }else{
-            let distance = Float(commuteMiles.text!)!
-            if(distance==(20/60)){ // 20 mi/hr = .33mi/min
+        }else{ //data is present
+            var distance = Float(commuteMiles.text!)!
+            if(monthlySwitch.isOn){ // switch on
+                distance = distance*20 //20 work days, multiply totals by 20
+                reportCommuteTime.text = String(format: "%.2f", distance/(20/60))+" mins"
+            }else{//switch is off
+                if(distance==(20/60)){ // 20 mi/hr = .33mi/min
                     reportCommuteTime.text = "1 min"
                 }else{ //all others
                     reportCommuteTime.text = String(format: "%.2f", distance/(20/60))+" mins"
-                }
+                }//redundant, fix if time allows
+            }
         }
         
         //gas = mi/gal (avg 24 mi/gallon)
         //gallons needed = distance/24
         if(commuteMiles.text!.isEmpty){ //no input, default to zero
             reportGasNeeded.text = "0 gallons"
-        }else{
-            let distance = Float(commuteMiles.text!)!
+        }else{ //data is present
+            var distance = Float(commuteMiles.text!)!
+            if(monthlySwitch.isOn){ // switch on
+                distance = distance*20
+            }//do for both on and off switch
             if(distance==24){ // 24 miles takes 1 gallon
                 reportGasNeeded.text = "1 gallon"
             }else{ //all others

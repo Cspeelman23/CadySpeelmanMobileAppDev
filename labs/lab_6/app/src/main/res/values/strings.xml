@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab6</string>
+    <string name="title">Give your chicken a name:</string>
+    <string name="button">Hatch</string>
+    <string name="image">chicken picture</string>
+    <string name="image2">egg picture</string>
+    <string name="name">Name</string>
+</resources>

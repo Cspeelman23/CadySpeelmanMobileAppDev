@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CadyLab7</string>
+    <string name="title">Which Companion is Right for You?</string>
+    <string name="name">Your Name</string>
+    <string name="size">Size</string>
+    <string-array name="sizeClass">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+    <string name="noise">Noisy?</string>
+    <string name="silent">No</string>
+    <string name="loud">Yes</string>
+    <string name="submit">Submit Answers</string>
+</resources>

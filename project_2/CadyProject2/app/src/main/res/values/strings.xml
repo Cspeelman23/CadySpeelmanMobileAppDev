@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CadyProject2</string>
+    <string name="header">Guess My Pizza!</string>
+    <string name="light">Light</string>
+    <string name="heavy">Heavy</string>
+    <string name="regular">Regular</string>
+    <string name="extra">Extra</string>
+    <string name="sauce">Sauce</string>
+    <string name="cheese">Cheese</string>
+    <string name="mozz">Mozzarella</string>
+    <string name="parm">Parmesan</string>
+    <string name="ched">Cheddar</string>
+    <string name="toppings">Toppings</string>
+    <string name="pproni">Pepperoni</string>
+    <string name="mush">Mushrooms</string>
+    <string name="pprs">Peppers</string>
+    <string name="slices">Slices</string>
+
+    <string name="sliceToggle">Yes</string>
+    <string name="image">pizzaimage</string>
+</resources>

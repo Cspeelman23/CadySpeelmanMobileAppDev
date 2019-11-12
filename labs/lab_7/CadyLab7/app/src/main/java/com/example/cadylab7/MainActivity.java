@@ -2,12 +2,14 @@ package com.example.cadylab7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
@@ -71,10 +73,17 @@ public class MainActivity extends AppCompatActivity {
                     buddy = "Ghost"; //shouldn't be possible, widgets come in initialized
             }
         }
-    //text view and image
+    //text view, toast, and image
+        Context context = getApplicationContext();
+        CharSequence text = "We've picked your companion!";
+        int duration = Toast.LENGTH_SHORT;
 
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+        
         ImageView buddyFace = findViewById(R.id.buddy);
         buddyFace.setVisibility(View.VISIBLE);
+
         result.setText(owner + ", your perfect companion is a " + buddy);
 
     }

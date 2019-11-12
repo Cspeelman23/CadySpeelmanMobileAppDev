@@ -15,7 +15,9 @@
     <string name="mush">Mushrooms</string>
     <string name="pprs">Peppers</string>
     <string name="slices">Slices</string>
-
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="imgContent">Module Confirm Face</string>
     <string name="sliceToggle">Yes</string>
     <string name="image">pizzaimage</string>
 </resources>

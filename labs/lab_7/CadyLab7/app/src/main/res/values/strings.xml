@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CadyLab7</string>
+    <string name="app_name">Companion Picker</string>
     <string name="title">Which Companion is Right for You?</string>
     <string name="name">Your Name</string>
     <string name="size">Size</string>

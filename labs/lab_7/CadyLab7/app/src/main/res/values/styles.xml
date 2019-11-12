@@ -7,5 +7,14 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Burnt" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="android:colorAccent">@color/secondaryColor</item>
+        <item name="android:textColorPrimary">@color/primaryDarkColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:colorBackground">@color/primaryLightColor</item>
+        <item name="android:colorButtonNormal">@color/secondaryColor</item>
+    </style>
 
 </resources>

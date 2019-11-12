@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -14,12 +15,18 @@ public class MainActivity extends AppCompatActivity {
 
     private Spinner sizeClass;
     private ToggleButton toggle;
+    private TextView result;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //get views
+        sizeClass = findViewById(R.id.spinner);
+        toggle = findViewById(R.id.toggleButton);
+        result = findViewById(R.id.resultBox);
     }
 
 
@@ -34,15 +41,16 @@ public class MainActivity extends AppCompatActivity {
         EditText ownerName = findViewById(R.id.ownerName);
         String owner = ownerName.getText().toString();
 
+
         if(noiseLevel){//yes, is noisy
             switch (sizeLevel){
-                case "sm":
+                case "Small":
                     buddy = "Parakeet";
                     break;
-                case "md":
+                case "Medium":
                     buddy = "Duck";
                     break;
-                case "lg":
+                case "Large":
                     buddy = "Seal";
                     break;
                 default:
@@ -50,21 +58,23 @@ public class MainActivity extends AppCompatActivity {
             }
         }else{//no, is quiet
             switch (sizeLevel) {
-                case "sm":
+                case "Small":
                     buddy = "Succulent";
                     break;
-                case "md":
+                case "Medium":
                     buddy = "Snowman";
                     break;
-                case "lg":
+                case "Large":
                     buddy = "Giraffe";
                     break;
                 default:
                     buddy = "Ghost"; //shouldn't be possible, widgets come in initialized
             }
         }
-    //text view
-        TextView result = findViewById(R.id.resultBox);
+    //text view and image
+
+        ImageView buddyFace = findViewById(R.id.buddy);
+        buddyFace.setVisibility(View.VISIBLE);
         result.setText(owner + ", your perfect companion is a " + buddy);
 
     }

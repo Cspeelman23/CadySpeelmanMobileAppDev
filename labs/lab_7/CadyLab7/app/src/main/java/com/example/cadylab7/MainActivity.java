@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
-        
+
         ImageView buddyFace = findViewById(R.id.buddy);
         buddyFace.setVisibility(View.VISIBLE);
 

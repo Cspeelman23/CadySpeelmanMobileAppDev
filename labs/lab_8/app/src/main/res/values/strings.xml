@@ -6,4 +6,5 @@
     <string name="sea">Sea</string>
     <string name="button">Search</string>
     <string name="title_activity_transportation">TransportationActivity</string>
+    <string name="suggestedTravelmode">This is the transport type you should take</string>
 </resources>

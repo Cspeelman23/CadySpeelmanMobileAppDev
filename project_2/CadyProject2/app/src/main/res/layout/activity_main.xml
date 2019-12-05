@@ -37,7 +37,7 @@
         android:layout_marginTop="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0">
@@ -102,7 +102,7 @@
                 android:id="@+id/checkBox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/mozz"
                 app:layout_constraintStart_toStartOf="parent"
@@ -112,6 +112,8 @@
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="@string/parm"
                 app:layout_constraintBottom_toBottomOf="@+id/checkBox1"
                 app:layout_constraintEnd_toStartOf="@+id/checkBox3"
@@ -121,7 +123,7 @@
                 android:id="@+id/checkBox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="16dp"
                 android:text="@string/ched"
                 app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -136,15 +138,45 @@
                 app:layout_constraintBottom_toBottomOf="@+id/ToppingsFace"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <TextView
+                android:id="@+id/pproni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pproni"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ToppingsFace" />
+
+            <TextView
+                android:id="@+id/pprs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pprs"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mushrooms" />
+
+            <TextView
+                android:id="@+id/mush"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/mush"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pepperoni" />
+
             <RadioGroup
                 android:id="@+id/pepperoni"
-                android:layout_width="0dp"
-                android:layout_height="31dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="56dp"
+                android:layout_width="259dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ToppingsFace">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pproni">
 
                 <RadioButton
                     android:id="@+id/radioButton"
@@ -169,11 +201,11 @@
                 android:id="@+id/mushrooms"
                 android:layout_width="wrap_content"
                 android:layout_height="31dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="56dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pepperoni">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mush">
 
                 <RadioButton
                     android:id="@+id/radioButton7"
@@ -198,11 +230,11 @@
                 android:id="@+id/peppers"
                 android:layout_width="254dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="56dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mushrooms">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pprs">
 
                 <RadioButton
                     android:id="@+id/radioButton11"
@@ -261,22 +293,26 @@
                 android:id="@+id/toggleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/sliceToggle"
                 android:textOff="@string/no"
                 android:textOn="@string/yes"
-                app:layout_constraintBottom_toBottomOf="@+id/SlicesFace"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/SlicesFace" />
 
             <ImageView
                 android:id="@+id/SlicesFace"
                 android:layout_width="46dp"
                 android:layout_height="43dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp"
                 android:contentDescription="@string/imgContent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/Sliced"
                 app:layout_constraintTop_toBottomOf="@+id/peppers"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/neutral" />
 
             <TextView
@@ -289,35 +325,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/SlicesFace"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/pproni"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/pproni"
-                app:layout_constraintEnd_toStartOf="@+id/pepperoni"
-                app:layout_constraintTop_toTopOf="@+id/pepperoni" />
-
-            <TextView
-                android:id="@+id/mush"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/mush"
-                app:layout_constraintEnd_toStartOf="@+id/mushrooms"
-                app:layout_constraintTop_toTopOf="@+id/mushrooms" />
-
-            <TextView
-                android:id="@+id/pprs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/pprs"
-                app:layout_constraintEnd_toStartOf="@+id/peppers"
-                app:layout_constraintTop_toTopOf="@+id/peppers" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

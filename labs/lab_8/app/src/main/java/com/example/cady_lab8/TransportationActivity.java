@@ -39,7 +39,7 @@ public class TransportationActivity extends AppCompatActivity {
 
         //update text view
         TextView messageView = findViewById(R.id.resultView);
-        messageView.setText("You might want to travel by " + travelType + " proof of string:" + typeURL);
+        messageView.setText("You might want to travel by " + travelType);
     }
     private void loadWebSite(View view){
         Intent intent = new Intent((Intent.ACTION_VIEW));

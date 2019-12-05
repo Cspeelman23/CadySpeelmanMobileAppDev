@@ -8,19 +8,19 @@ public class TravelType {
     private void setTravelInfo(Integer radioSelect) {
         switch (radioSelect){
             case 0: // air
-                TransportMode = "a hot air balloon";
+                TransportMode = "hot air balloon";
                 SiteURL = "http://www.hotairballoonridescolorado.com/?gclid=EAIaIQobChMIp-ulk8CY5gIVENvACh0xFgpvEAAYASAAEgJY3fD_BwE";
                 break;
             case 1: // land
-                TransportMode = "a train";
+                TransportMode = "train";
                 SiteURL = "https://www.colorado.com/articles/complete-guide-colorado-train-trips";
                 break;
             case 2: // sea
-                TransportMode = "a cruise ship";
+                TransportMode = "cruise ship";
                 SiteURL = "https://www.carnival.com";
                 break;
-            default:// none selected
-                TransportMode = "a place nearby";
+            default:// none selected, should not be possible
+                TransportMode = "to a place nearby";
                 SiteURL = "https://www.google.com/maps";
         }
     }

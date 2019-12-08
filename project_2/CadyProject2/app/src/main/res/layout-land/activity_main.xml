@@ -20,12 +20,14 @@
 
     <ImageView
         android:id="@+id/base"
-        android:layout_width="wrap_content"
-        android:layout_height="146dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/image"
-        app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
         app:srcCompat="@drawable/base" />
@@ -41,22 +43,23 @@
         android:alpha=".0"
         app:layout_constraintBottom_toBottomOf="@+id/base"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="@+id/base"
         app:layout_constraintTop_toTopOf="@+id/base"
         app:srcCompat="@drawable/sauce" />
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="0dp"
+        android:layout_width="348dp"
         android:layout_height="0dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:outlineProvider="bounds"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/base"
+        app:layout_constraintStart_toEndOf="@+id/base"
+        app:layout_constraintTop_toBottomOf="@+id/Title"
         app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout

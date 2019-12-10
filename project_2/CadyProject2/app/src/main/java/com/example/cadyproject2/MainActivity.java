@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
     //random nums
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     boolean mozzGuessVal = (Math.random() < 0.5); // random true/false
     boolean parmGuessVal = (Math.random() < 0.5);
     boolean chedGuessVal = (Math.random() < 0.5);
+
+    boolean slicesGuessVal = (Math.random() < 0.5);
     //end random nums
 
     //progress checkers  //win if all true
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     boolean cheeseModulePart2 = false;
     boolean cheeseModulePart3 = false;
     boolean cheeseModuleWon = false;
+
+    boolean slicesModule = false;
     // end progress checkers
 
 
@@ -133,6 +138,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //end cheese module
+
+        //begin toppings module
+        //end toppings module
+
+        //begin slices module
+        ToggleButton slicesToggle = (ToggleButton) findViewById(R.id.toggleSlices);
+        final ImageView confirmSlicesFace = findViewById(R.id.SlicesFaceWin);
+        final ImageView slicesLines = findViewById(R.id.slices);
+        slicesToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                //Log.i("slices", Boolean.toString(slicesGuessVal));
+                if (isChecked) {
+                    slicesLines.setVisibility(View.VISIBLE);//show slices img
+                } else {
+                    slicesLines.setVisibility(View.INVISIBLE);//hide slices img
+                }
+                if (isChecked == slicesGuessVal){ //toggle button matches random bool
+                    confirmSlicesFace.setVisibility(View.VISIBLE);//happy face
+                }else{//does not match
+                    confirmSlicesFace.setVisibility(View.INVISIBLE);//hide happy face
+                }
+            }
+        });
+        //end slices module
+
 
     }//end onCreate
 

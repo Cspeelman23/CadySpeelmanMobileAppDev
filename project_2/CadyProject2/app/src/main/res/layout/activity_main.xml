@@ -48,6 +48,54 @@
         app:layout_constraintTop_toTopOf="@+id/base"
         app:srcCompat="@drawable/sauce" />
 
+    <ImageView
+        android:id="@+id/mozz"
+        android:layout_width="158dp"
+        android:layout_height="145dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/mozzarella" />
+
+    <ImageView
+        android:id="@+id/parm"
+        android:layout_width="187dp"
+        android:layout_height="148dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/parmesan" />
+
+    <ImageView
+        android:id="@+id/ched"
+        android:layout_width="171dp"
+        android:layout_height="147dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/cheddar" />
+
+    <ImageView
+        android:id="@+id/slices"
+        android:layout_width="177dp"
+        android:layout_height="149dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/slices8" />
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
@@ -330,7 +378,7 @@
                 app:srcCompat="@drawable/neutral" />
 
             <ToggleButton
-                android:id="@+id/toggleButton"
+                android:id="@+id/toggleSlices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
@@ -355,6 +403,16 @@
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/neutral" />
 
+            <ImageView
+                android:id="@+id/SlicesFaceWin"
+                android:layout_width="49dp"
+                android:layout_height="46dp"
+                android:contentDescription="@string/imgContent"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/SlicesFace"
+                app:layout_constraintTop_toTopOf="@+id/SlicesFace"
+                app:srcCompat="@drawable/happy" />
+
             <TextView
                 android:id="@+id/Sliced"
                 android:layout_width="wrap_content"
@@ -367,41 +425,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <ImageView
-        android:id="@+id/mozz"
-        android:layout_width="158dp"
-        android:layout_height="145dp"
-        android:contentDescription="@string/image"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/base"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/base"
-        app:srcCompat="@drawable/mozzarella" />
-
-    <ImageView
-        android:id="@+id/parm"
-        android:layout_width="187dp"
-        android:layout_height="148dp"
-        android:contentDescription="@string/image"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/base"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/base"
-        app:srcCompat="@drawable/parmesan" />
-
-    <ImageView
-        android:id="@+id/ched"
-        android:layout_width="171dp"
-        android:layout_height="147dp"
-        android:contentDescription="@string/image"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/base"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/base"
-        app:srcCompat="@drawable/cheddar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

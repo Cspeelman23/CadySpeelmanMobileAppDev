@@ -20,47 +20,203 @@
 
     <ImageView
         android:id="@+id/base"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="368dp"
+        android:layout_height="342dp"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/image"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
         app:srcCompat="@drawable/base" />
 
     <ImageView
         android:id="@+id/sauce"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="347dp"
+        android:layout_height="328dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:alpha=".0"
+        android:alpha="0"
+        android:contentDescription="@string/image"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/base"
         app:layout_constraintTop_toTopOf="@+id/base"
         app:srcCompat="@drawable/sauce" />
 
+    <ImageView
+        android:id="@+id/mozz"
+        android:layout_width="419dp"
+        android:layout_height="305dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="@+id/base"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/mozzarella" />
+
+    <ImageView
+        android:id="@+id/parm"
+        android:layout_width="416dp"
+        android:layout_height="320dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/parmesan" />
+
+    <ImageView
+        android:id="@+id/ched"
+        android:layout_width="342dp"
+        android:layout_height="322dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/cheddar" />
+
+    <ImageView
+        android:id="@+id/pponiL"
+        android:layout_width="287dp"
+        android:layout_height="265dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/pepperoni_light" />
+
+    <ImageView
+        android:id="@+id/pponiR"
+        android:layout_width="297dp"
+        android:layout_height="293dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/mozz"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="0.469"
+        app:srcCompat="@drawable/pepperoni_regular" />
+
+    <ImageView
+        android:id="@+id/pponiE"
+        android:layout_width="339dp"
+        android:layout_height="295dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/mozz"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="0.404"
+        app:srcCompat="@drawable/pepperoni_extra" />
+
+    <ImageView
+        android:id="@+id/mushL"
+        android:layout_width="299dp"
+        android:layout_height="282dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/mushroom_light" />
+
+    <ImageView
+        android:id="@+id/mushR"
+        android:layout_width="299dp"
+        android:layout_height="278dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintHorizontal_bias="0.637"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="0.406"
+        app:srcCompat="@drawable/mushroom_regular" />
+
+    <ImageView
+        android:id="@+id/mushE"
+        android:layout_width="298dp"
+        android:layout_height="295dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="0.53"
+        app:srcCompat="@drawable/mushroom_extra" />
+
+    <ImageView
+        android:id="@+id/pepL"
+        android:layout_width="264dp"
+        android:layout_height="264dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/peppers_light" />
+
+    <ImageView
+        android:id="@+id/pepR"
+        android:layout_width="282dp"
+        android:layout_height="276dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/mozz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/peppers_regular" />
+
+    <ImageView
+        android:id="@+id/pepE"
+        android:layout_width="304dp"
+        android:layout_height="290dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/peppers_extra" />
+
+    <ImageView
+        android:id="@+id/slices"
+        android:layout_width="381dp"
+        android:layout_height="356dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/slices8" />
+
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="348dp"
-        android:layout_height="0dp"
+        android:layout_width="341dp"
+        android:layout_height="352dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:outlineProvider="bounds"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/base"
-        app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/Title">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -86,6 +242,7 @@
                 android:indeterminate="false"
                 android:indeterminateTint="#E73737"
                 android:max="100"
+                android:progress="0"
                 android:progressTint="#E20B0B"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SauceFace" />
@@ -124,6 +281,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:checked="false"
                 android:text="@string/mozz"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CheeseFace" />
@@ -276,6 +434,49 @@
             </RadioGroup>
 
             <ImageView
+                android:id="@+id/SauceFace"
+                android:layout_width="42dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/imgContent"
+                app:layout_constraintStart_toEndOf="@+id/Sauce"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/neutral" />
+
+            <ImageView
+                android:id="@+id/SauceFaceWin"
+                android:layout_width="43dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/imgContent"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/SauceFace"
+                app:layout_constraintTop_toTopOf="@+id/SauceFace"
+                app:srcCompat="@drawable/happy" />
+
+            <ImageView
+                android:id="@+id/CheeseFace"
+                android:layout_width="45dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/imgContent"
+                app:layout_constraintDimensionRatio="w,1:1"
+                app:layout_constraintStart_toEndOf="@+id/Cheese"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar"
+                app:srcCompat="@drawable/neutral" />
+
+            <ImageView
+                android:id="@+id/CheeseFaceWin"
+                android:layout_width="46dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/imgContent"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/CheeseFace"
+                app:layout_constraintTop_toTopOf="@+id/CheeseFace"
+                app:srcCompat="@drawable/happy" />
+
+            <ImageView
                 android:id="@+id/ToppingsFace"
                 android:layout_width="42dp"
                 android:layout_height="48dp"
@@ -287,27 +488,14 @@
                 app:srcCompat="@drawable/neutral" />
 
             <ImageView
-                android:id="@+id/CheeseFace"
-                android:layout_width="44dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:contentDescription="@string/imgContent"
-                app:layout_constraintDimensionRatio="w,1:1"
-                app:layout_constraintStart_toEndOf="@+id/Cheese"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar"
-                app:srcCompat="@drawable/neutral" />
-
-            <ImageView
-                android:id="@+id/SauceFace"
+                android:id="@+id/ToppingsFaceWin"
                 android:layout_width="42dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_height="49dp"
                 android:contentDescription="@string/imgContent"
-                app:layout_constraintStart_toEndOf="@+id/Sauce"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/neutral" />
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/ToppingsFace"
+                app:layout_constraintTop_toTopOf="@+id/ToppingsFace"
+                app:srcCompat="@drawable/happy" />
 
             <ToggleButton
                 android:id="@+id/toggleSlices"
@@ -315,6 +503,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
                 android:layout_marginBottom="16dp"
+                android:checked="false"
                 android:text="@string/sliceToggle"
                 android:textOff="@string/no"
                 android:textOn="@string/yes"
@@ -334,6 +523,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/peppers"
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/neutral" />
+
+            <ImageView
+                android:id="@+id/SlicesFaceWin"
+                android:layout_width="49dp"
+                android:layout_height="46dp"
+                android:contentDescription="@string/imgContent"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/SlicesFace"
+                app:layout_constraintTop_toTopOf="@+id/SlicesFace"
+                app:srcCompat="@drawable/happy" />
 
             <TextView
                 android:id="@+id/Sliced"

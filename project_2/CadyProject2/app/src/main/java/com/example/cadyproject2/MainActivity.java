@@ -431,7 +431,7 @@ public class MainActivity extends AppCompatActivity {
                 toppingsModulePart2 = false; //mushroom
                 toppingsModulePart3 = false; //peppers
                 toppingsModuleWon = false;
-                slicesModuleWon = false;
+                slicesModuleWon = false; //not working every time??
 
                 SeekBar sauceSeekBar = findViewById(R.id.seekBar);
                 sauceSeekBar.setProgress(0);
@@ -445,7 +445,7 @@ public class MainActivity extends AppCompatActivity {
                 if(pp1.isChecked()){
                     pp1.setChecked(false); // null if not already checked
                 }
-                RadioButton pp2 = findViewById(R.id.regular);
+                RadioButton pp2 = findViewById(R.id.regular); //causing small re-select issue
                 if(pp2.isChecked()){
                     pp2.setChecked(false);
                 };
@@ -481,7 +481,7 @@ public class MainActivity extends AppCompatActivity {
                 slicesToggle.setChecked(false);
 
                 ImageView invisi = findViewById(R.id.sauce);
-                invisi.setImageAlpha(0);
+                invisi.setAlpha((float).0);
                 invisi = findViewById(R.id.mozz);
                 invisi.setVisibility(View.INVISIBLE);
                 invisi = findViewById(R.id.parm);

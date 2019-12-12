@@ -523,6 +523,52 @@ public class MainActivity extends AppCompatActivity {
         });
         winNote.create().show();
     }
+
+    // invoked when the activity may be temporarily destroyed, save the instance state here
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("save", mozzGuessVal);//turns out this saves the code of it being random and just runs it again
+        outState.putBoolean("save", parmGuessVal);
+        outState.putBoolean("save", chedGuessVal);
+        outState.putBoolean("save", slicesGuessVal);
+        outState.putFloat("save",sauceGuessVal);
+        outState.putInt("save", toppings1Val);
+        outState.putInt("save", toppings2Val);
+        outState.putInt("save", toppings2Val);
+
+        outState.putBoolean("save", sauceModuleWon);
+        outState.putBoolean("save", cheeseModuleWon);
+        outState.putBoolean("save", cheeseModulePart1);
+        outState.putBoolean("save", cheeseModulePart2);
+        outState.putBoolean("save", cheeseModulePart3);
+        outState.putBoolean("save", toppingsModuleWon);
+        outState.putBoolean("save", toppingsModulePart1);
+        outState.putBoolean("save", toppingsModulePart2);
+        outState.putBoolean("save", toppingsModulePart3);
+        outState.putBoolean("save", slicesModuleWon);
+
+
+        outState.putInt("save", R.drawable.sauce);
+        outState.putInt("save", R.drawable.mozzarella);
+        outState.putInt("save", R.drawable.parmesan);
+        outState.putInt("save", R.drawable.cheddar);
+        outState.putInt("save", R.drawable.pepperoni_light);
+        outState.putInt("save", R.drawable.pepperoni_regular);
+        outState.putInt("save", R.drawable.pepperoni_extra);
+        outState.putInt("save", R.drawable.mushroom_light);
+        outState.putInt("save", R.drawable.mushroom_regular);
+        outState.putInt("save", R.drawable.mushroom_extra);
+        outState.putInt("save", R.drawable.peppers_light);
+        outState.putInt("save", R.drawable.peppers_regular);
+        outState.putInt("save", R.drawable.peppers_extra);
+        outState.putInt("save", R.drawable.slices8);
+        outState.putInt("save", R.drawable.happy);
+
+
+
+
+    }
 }
 
 

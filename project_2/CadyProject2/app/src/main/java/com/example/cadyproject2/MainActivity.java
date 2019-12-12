@@ -2,15 +2,20 @@ package com.example.cadyproject2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     //random nums
@@ -18,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     boolean mozzGuessVal = (Math.random() < 0.5); // random true/false
     boolean parmGuessVal = (Math.random() < 0.5);
     boolean chedGuessVal = (Math.random() < 0.5);
-
+    int toppings1Val = (int)Math.floor(Math.random() * 3) + 1; //1-3 where 1=light,2=regular,3=extra  //pepperoni
+    int toppings2Val = (int)Math.floor(Math.random() * 3) + 1; //mushroom
+    int toppings3Val = (int)Math.floor(Math.random() * 3) + 1; //peppers
     boolean slicesGuessVal = (Math.random() < 0.5);
     //end random nums
 
@@ -28,9 +35,14 @@ public class MainActivity extends AppCompatActivity {
     boolean cheeseModulePart2 = false;
     boolean cheeseModulePart3 = false;
     boolean cheeseModuleWon = false;
-
+    boolean toppingsModulePart1 = false; //pepperoni
+    boolean toppingsModulePart2 = false; //mushroom
+    boolean toppingsModulePart3 = false; //peppers
+    boolean toppingsModuleWon = false;
     boolean slicesModule = false;
     // end progress checkers
+
+
 
 
 
@@ -39,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //begin sauce module
-        SeekBar sauceSeekBar = (SeekBar)findViewById(R.id.seekBar);
-        final ImageView confirmSauceFace = findViewById(R.id.SauceFaceWin);
-        final View sauceImg = findViewById(R.id.sauce);
+        SeekBar sauceSeekBar = findViewById(R.id.seekBar);
+        final ImageView confirmSauceFace = findViewById(R.id.SauceFaceWin); //Android Studio told me it needs to be final
+        final View sauceImg = findViewById(R.id.sauce); //Android Studio demands commitment
         sauceSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             public void onProgressChanged(SeekBar sauceSeekBar, int progress, boolean fromUser) {
@@ -140,10 +152,191 @@ public class MainActivity extends AppCompatActivity {
         //end cheese module
 
         //begin toppings module
+        //pepperoni
+        final ImageView light = findViewById(R.id.pponiL);
+        final ImageView regular = findViewById(R.id.pponiR);
+        final ImageView extra = findViewById(R.id.pponiE);
+        RadioGroup pepperoniGroup = findViewById(R.id.pepperoni);
+        pepperoniGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup Pgroup, int checkedId) {
+                RadioButton checkedRadioButton = Pgroup.findViewById(checkedId);
+                boolean checked = checkedRadioButton.isChecked();
+
+                // Check which radio button was clicked
+                switch(checkedRadioButton.getId()) {
+                    case R.id.light:
+                        if (checked){
+                            light.setVisibility(View.VISIBLE);//show light pepperoni
+                            regular.setVisibility(View.INVISIBLE);//hide regular pepperoni
+                            extra.setVisibility(View.INVISIBLE);//hide extra pepperoni
+//                            Log.i("radio","light");
+//                            Log.i("radio1",Integer.toString(toppings1Val));
+//                            Log.i("radio2",Integer.toString(toppings2Val));
+//                            Log.i("radio3",Integer.toString(toppings3Val));
+                            if(toppings1Val == 1){ //1 means light is true
+                                toppingsModulePart1 = true;
+                            }else{
+                                toppingsModulePart1 = false;
+                            }
+
+                            break;
+                        }//else statement wont work here
+                    case R.id.regular:
+                        if (checked){
+                            light.setVisibility(View.INVISIBLE);//hide light pepperoni
+                            regular.setVisibility(View.VISIBLE);//show regular pepperoni
+                            extra.setVisibility(View.INVISIBLE);//show extra pepperoni
+                            //Log.i("radio","regular");
+                            if(toppings1Val == 2){ //2 when regular is true
+                                toppingsModulePart1 = true;
+                            }else{
+                                toppingsModulePart1 = false;
+                            }
+                            break;
+                        }
+                    case R.id.extra:
+                        if (checked){
+                            light.setVisibility(View.INVISIBLE);//hide light pepperoni
+                            regular.setVisibility(View.INVISIBLE);//hide regular pepperoni
+                            extra.setVisibility(View.VISIBLE);//show extra pepperoni
+                            //Log.i("radio","extra");
+                            if(toppings1Val == 3){ //3 when extra is true
+                                toppingsModulePart1 = true;
+                            }else{
+                                toppingsModulePart1 = false;
+                            }
+                            break;
+                        }
+
+                }
+                //Log.i("radio","outside");//call check module parts here
+                Log.i("radioFinal1", Boolean.toString(toppingsModulePart1));
+                checkToppingsTruth();
+
+            }
+        });
+        //mushrooms
+        final ImageView lightm = findViewById(R.id.mushL);
+        final ImageView regularm = findViewById(R.id.mushR);
+        final ImageView extram = findViewById(R.id.mushE);
+        RadioGroup mushroomGroup = findViewById(R.id.mushrooms);
+        mushroomGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup Mgroup, int checkedId2)
+            {
+                RadioButton checkedRadioButton2 = Mgroup.findViewById(checkedId2);
+                boolean checked2 = checkedRadioButton2.isChecked();
+
+                // Check which radio button was clicked
+                switch(checkedRadioButton2.getId()) {
+                    case R.id.mlight:
+                        if (checked2){
+                            lightm.setVisibility(View.VISIBLE);//show light mushrooms
+                            regularm.setVisibility(View.INVISIBLE);//hide regular mushrooms
+                            extram.setVisibility(View.INVISIBLE);//hide extra mushrooms
+                            //Log.i("radio","light2");
+                            if(toppings2Val == 1){ //1 means light is true
+                                toppingsModulePart2 = true;
+                            }else{
+                                toppingsModulePart2 = false;
+                            }
+                            break;
+                        }
+                    case R.id.mregular:
+                        if (checked2){
+                            lightm.setVisibility(View.INVISIBLE);//hide light mushrooms
+                            regularm.setVisibility(View.VISIBLE);//show regular mushrooms
+                            extram.setVisibility(View.INVISIBLE);//hide extra mushrooms
+                            //Log.i("radio","regular2");
+                            if(toppings2Val == 2){ //2 means regular is true
+                                toppingsModulePart2 = true;
+                            }else{
+                                toppingsModulePart2 = false;
+                            }
+                            break;
+                        }
+                    case R.id.mextra:
+                        if (checked2){
+                            lightm.setVisibility(View.INVISIBLE);//hide light mushrooms
+                            regularm.setVisibility(View.INVISIBLE);//hide regular mushrooms
+                            extram.setVisibility(View.VISIBLE);//show extra mushrooms
+                            //Log.i("radio","extra2");
+                            if(toppings2Val == 3){ //3 means extra is true
+                                toppingsModulePart2 = true;
+                            }else{
+                                toppingsModulePart2 = false;
+                            }
+                            break;
+                        }
+                }
+                Log.i("radioFinal2", Boolean.toString(toppingsModulePart2));
+                checkToppingsTruth();
+
+            }
+        });
+        //peppers
+        final ImageView lightp = findViewById(R.id.pepL);
+        final ImageView regularp = findViewById(R.id.pepR);
+        final ImageView extrap = findViewById(R.id.pepE);
+        RadioGroup pepperGroup = findViewById(R.id.peppers);
+        pepperGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup P2group, int checkedId3)
+            {
+                RadioButton checkedRadioButton3 = P2group.findViewById(checkedId3);
+                boolean checked3 = checkedRadioButton3.isChecked();
+
+                // Check which radio button was clicked
+                switch(checkedRadioButton3.getId()) {
+                    case R.id.plight:
+                        if (checked3){
+                            lightp.setVisibility(View.VISIBLE);//show light peppers
+                            regularp.setVisibility(View.INVISIBLE);//hide regular peppers
+                            extrap.setVisibility(View.INVISIBLE);//hide extra peppers
+                            //Log.i("radio","light3");
+                            if(toppings3Val == 1){ //1 means light is true
+                                toppingsModulePart3 = true;
+                            }else{
+                                toppingsModulePart3 = false;
+                            }
+                            break;
+                        }
+                    case R.id.pregular:
+                        if (checked3){
+                            lightp.setVisibility(View.INVISIBLE);//hide light peppers
+                            regularp.setVisibility(View.VISIBLE);//show regular peppers
+                            extrap.setVisibility(View.INVISIBLE);//hide extra peppers
+                            //Log.i("radio","regular3");
+                            if(toppings3Val == 2){ //2 means regular is true
+                                toppingsModulePart3 = true;
+                            }else{
+                                toppingsModulePart3 = false;
+                            }
+                            break;
+                        }
+                    case R.id.pextra:
+                        if (checked3){
+                            lightp.setVisibility(View.INVISIBLE);//hide light peppers
+                            regularp.setVisibility(View.INVISIBLE);//hide regular peppers
+                            extrap.setVisibility(View.VISIBLE);//show extra peppers
+                            //Log.i("radio","extra3");
+                            if(toppings3Val == 3){ //3 means extra is true
+                                toppingsModulePart3 = true;
+                            }else{
+                                toppingsModulePart3 = false;
+                            }
+                            break;
+                        }
+                }
+                Log.i("radioFinal3", Boolean.toString(toppingsModulePart3));
+                checkToppingsTruth();
+
+            }
+        });
         //end toppings module
 
         //begin slices module
-        ToggleButton slicesToggle = (ToggleButton) findViewById(R.id.toggleSlices);
+        ToggleButton slicesToggle = findViewById(R.id.toggleSlices);
         final ImageView confirmSlicesFace = findViewById(R.id.SlicesFaceWin);
         final ImageView slicesLines = findViewById(R.id.slices);
         slicesToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -179,4 +372,26 @@ public class MainActivity extends AppCompatActivity {
         Log.i("test", Boolean.toString(cheeseModuleWon));
         //call check for winGame ftn
     }
+
+    public void checkToppingsTruth(){
+        ImageView confirmToppingsFace = findViewById(R.id.ToppingsFaceWin);
+        if(toppingsModulePart1 && toppingsModulePart2 && toppingsModulePart3){
+            toppingsModuleWon = true;
+            confirmToppingsFace.setVisibility(View.VISIBLE);//happy face
+
+        }else{
+            toppingsModuleWon = false;
+            confirmToppingsFace.setVisibility(View.INVISIBLE);//hide happy face
+        }
+        //Log.i("radio win", Boolean.toString(toppingsModuleWon));
+
+    }
 }
+
+
+//Citations
+//https://abhiandroid.com/ui/seekbar
+//https://stackoverflow.com/questions/8386832/android-checkbox-listener
+//https://stackoverflow.com/questions/8878015/return-true-or-false-randomly/8878065
+//https://stackoverflow.com/questions/32837783/convert-double-to-float-in-java
+//https://stackoverflow.com/questions/6780981/android-radiogroup-how-to-configure-the-event-listener

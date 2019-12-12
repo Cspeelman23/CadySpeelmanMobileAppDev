@@ -85,6 +85,118 @@
         app:srcCompat="@drawable/cheddar" />
 
     <ImageView
+        android:id="@+id/pponiL"
+        android:layout_width="131dp"
+        android:layout_height="121dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/pepperoni_light" />
+
+    <ImageView
+        android:id="@+id/pponiR"
+        android:layout_width="135dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/pepperoni_regular" />
+
+    <ImageView
+        android:id="@+id/pponiE"
+        android:layout_width="134dp"
+        android:layout_height="123dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/pepperoni_extra" />
+
+    <ImageView
+        android:id="@+id/mushL"
+        android:layout_width="125dp"
+        android:layout_height="127dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/mushroom_light" />
+
+    <ImageView
+        android:id="@+id/mushR"
+        android:layout_width="123dp"
+        android:layout_height="119dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="0.37"
+        app:srcCompat="@drawable/mushroom_regular" />
+
+    <ImageView
+        android:id="@+id/mushE"
+        android:layout_width="145dp"
+        android:layout_height="139dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mushroom_extra" />
+
+    <ImageView
+        android:id="@+id/pepL"
+        android:layout_width="125dp"
+        android:layout_height="126dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/peppers_light" />
+
+    <ImageView
+        android:id="@+id/pepR"
+        android:layout_width="146dp"
+        android:layout_height="133dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/peppers_regular" />
+
+    <ImageView
+        android:id="@+id/pepE"
+        android:layout_width="144dp"
+        android:layout_height="127dp"
+        android:contentDescription="@string/image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/base"
+        app:srcCompat="@drawable/peppers_extra" />
+
+    <ImageView
         android:id="@+id/slices"
         android:layout_width="177dp"
         android:layout_height="149dp"
@@ -247,19 +359,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/pproni">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/light"
                     android:layout_width="88dp"
                     android:layout_height="34dp"
                     android:text="@string/light" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/regular"
                     android:layout_width="93dp"
                     android:layout_height="wrap_content"
                     android:text="@string/regular" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/extra"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:text="@string/extra" />
@@ -276,19 +388,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/mush">
 
                 <RadioButton
-                    android:id="@+id/radioButton7"
+                    android:id="@+id/mlight"
                     android:layout_width="87dp"
                     android:layout_height="wrap_content"
                     android:text="@string/light" />
 
                 <RadioButton
-                    android:id="@+id/radioButton8"
+                    android:id="@+id/mregular"
                     android:layout_width="91dp"
                     android:layout_height="30dp"
                     android:text="@string/regular" />
 
                 <RadioButton
-                    android:id="@+id/radioButton10"
+                    android:id="@+id/mextra"
                     android:layout_width="76dp"
                     android:layout_height="wrap_content"
                     android:text="@string/extra" />
@@ -305,19 +417,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/pprs">
 
                 <RadioButton
-                    android:id="@+id/radioButton11"
+                    android:id="@+id/plight"
                     android:layout_width="87dp"
                     android:layout_height="33dp"
                     android:text="@string/light" />
 
                 <RadioButton
-                    android:id="@+id/radioButton12"
+                    android:id="@+id/pregular"
                     android:layout_width="92dp"
                     android:layout_height="34dp"
                     android:text="@string/regular" />
 
                 <RadioButton
-                    android:id="@+id/radioButton13"
+                    android:id="@+id/pextra"
                     android:layout_width="75dp"
                     android:layout_height="match_parent"
                     android:text="@string/extra" />
@@ -376,6 +488,16 @@
                 app:layout_constraintStart_toEndOf="@+id/Toppings"
                 app:layout_constraintTop_toBottomOf="@+id/checkBox2"
                 app:srcCompat="@drawable/neutral" />
+
+            <ImageView
+                android:id="@+id/ToppingsFaceWin"
+                android:layout_width="42dp"
+                android:layout_height="49dp"
+                android:contentDescription="@string/imgContent"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/ToppingsFace"
+                app:layout_constraintTop_toTopOf="@+id/ToppingsFace"
+                app:srcCompat="@drawable/happy" />
 
             <ToggleButton
                 android:id="@+id/toggleSlices"

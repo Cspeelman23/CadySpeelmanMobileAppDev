@@ -1,7 +1,9 @@
 package com.example.cadyproject2;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     //end random nums
 
     //progress checkers  //win if all true
-    boolean sauceModule = false;
+    boolean sauceModuleWon = false;
     boolean cheeseModulePart1 = false;
     boolean cheeseModulePart2 = false;
     boolean cheeseModulePart3 = false;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     boolean toppingsModulePart2 = false; //mushroom
     boolean toppingsModulePart3 = false; //peppers
     boolean toppingsModuleWon = false;
-    boolean slicesModule = false;
+    boolean slicesModuleWon = false;
     // end progress checkers
 
 
@@ -64,15 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 //takes 0.0 to 1.0
                 sauceImg.setAlpha(progressValueSauce);
                 if(progressValueSauce > sauceGuessVal-.05 && progressValueSauce < sauceGuessVal+.05){ //within 10%
-                    sauceModule = true;
+                    sauceModuleWon = true;
                     confirmSauceFace.setVisibility(View.VISIBLE);//happy face
                     //call check for winGame ftn
+                    checkWinGame();
                 }else{//outside desired range
-                    sauceModule = false;
+                    sauceModuleWon = false;
                     confirmSauceFace.setVisibility(View.INVISIBLE);//hide happy face
 
                 }
-                Log.i("Module",Boolean.toString(sauceModule));
+                //Log.i("Module",Boolean.toString(sauceModuleWon));
             }
             public void onStartTrackingTouch(SeekBar seekBar){
               //required abstract method
@@ -349,8 +352,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChecked == slicesGuessVal){ //toggle button matches random bool
                     confirmSlicesFace.setVisibility(View.VISIBLE);//happy face
+                    slicesModuleWon = true;
+                    //call check for winGame ftn
+                    checkWinGame();
                 }else{//does not match
                     confirmSlicesFace.setVisibility(View.INVISIBLE);//hide happy face
+                    slicesModuleWon = false;
                 }
             }
         });
@@ -364,13 +371,14 @@ public class MainActivity extends AppCompatActivity {
         if(cheeseModulePart1 && cheeseModulePart2 && cheeseModulePart3){
             cheeseModuleWon = true;
             confirmCheeseFace.setVisibility(View.VISIBLE);//happy face
-
+            //call check for winGame ftn
+            checkWinGame();
         }else{
             cheeseModuleWon = false;
             confirmCheeseFace.setVisibility(View.INVISIBLE);//hide happy face
         }
-        Log.i("test", Boolean.toString(cheeseModuleWon));
-        //call check for winGame ftn
+        //Log.i("test", Boolean.toString(cheeseModuleWon));
+
     }
 
     public void checkToppingsTruth(){
@@ -378,6 +386,8 @@ public class MainActivity extends AppCompatActivity {
         if(toppingsModulePart1 && toppingsModulePart2 && toppingsModulePart3){
             toppingsModuleWon = true;
             confirmToppingsFace.setVisibility(View.VISIBLE);//happy face
+            //call check for winGame ftn
+            checkWinGame();
 
         }else{
             toppingsModuleWon = false;
@@ -385,6 +395,133 @@ public class MainActivity extends AppCompatActivity {
         }
         //Log.i("radio win", Boolean.toString(toppingsModuleWon));
 
+    }
+
+    public void checkWinGame(){
+        if (sauceModuleWon && cheeseModuleWon && toppingsModuleWon && slicesModuleWon){ // all modules correct
+            //alert on win
+            Log.i("win", "Game Won");
+            showAlertDialog();
+        }
+
+    }
+    public void showAlertDialog(){
+        AlertDialog.Builder winNote = new AlertDialog.Builder(this);
+        winNote.setTitle("You Won!!!");
+        winNote.setMessage("Play again?");
+        winNote.setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //RESET
+                sauceGuessVal = (float)Math.random()+(float).1; //float .01 - 1.0
+                mozzGuessVal = (Math.random() < 0.5); // random true/false
+                parmGuessVal = (Math.random() < 0.5);
+                chedGuessVal = (Math.random() < 0.5);
+                toppings1Val = (int)Math.floor(Math.random() * 3) + 1; //1-3 where 1=light,2=regular,3=extra  //pepperoni
+                toppings2Val = (int)Math.floor(Math.random() * 3) + 1; //mushroom
+                toppings3Val = (int)Math.floor(Math.random() * 3) + 1; //peppers
+                slicesGuessVal = (Math.random() < 0.5);
+
+                sauceModuleWon = false;
+                cheeseModulePart1 = false;
+                cheeseModulePart2 = false;
+                cheeseModulePart3 = false;
+                cheeseModuleWon = false;
+                toppingsModulePart1 = false; //pepperoni
+                toppingsModulePart2 = false; //mushroom
+                toppingsModulePart3 = false; //peppers
+                toppingsModuleWon = false;
+                slicesModuleWon = false;
+
+                SeekBar sauceSeekBar = findViewById(R.id.seekBar);
+                sauceSeekBar.setProgress(0);
+                CheckBox mozzCheckBox = findViewById(R.id.checkBox1);
+                mozzCheckBox.setChecked(false);
+                CheckBox parmCheckBox = findViewById(R.id.checkBox2);
+                parmCheckBox.setChecked(false);
+                CheckBox chedCheckBox = findViewById(R.id.checkBox3);
+                chedCheckBox.setChecked(false);
+                RadioButton pp1 = findViewById(R.id.light);
+                if(pp1.isChecked()){
+                    pp1.setChecked(false); // null if not already checked
+                }
+                RadioButton pp2 = findViewById(R.id.regular);
+                if(pp2.isChecked()){
+                    pp2.setChecked(false);
+                };
+                RadioButton pp3 = findViewById(R.id.extra);
+                if(pp3.isChecked()){
+                    pp3.setChecked(false);
+                };
+                RadioButton m1 = findViewById(R.id.mlight);
+                if(m1.isChecked()){
+                    m1.setChecked(false);
+                };
+                RadioButton m2 = findViewById(R.id.mregular);
+                if(m2.isChecked()){
+                    m2.setChecked(false);
+                };
+                RadioButton m3 = findViewById(R.id.mextra);
+                if(m3.isChecked()){
+                    m3.setChecked(false);
+                };
+                RadioButton p1 = findViewById(R.id.plight);
+                if(p1.isChecked()){
+                    p1.setChecked(false);
+                };;
+                RadioButton p2 = findViewById(R.id.pregular);
+                if(p2.isChecked()){
+                    p2.setChecked(false);
+                };
+                RadioButton p3 = findViewById(R.id.pextra);
+                if(p3.isChecked()){
+                    p3.setChecked(false);
+                };
+                ToggleButton slicesToggle = findViewById(R.id.toggleSlices);
+                slicesToggle.setChecked(false);
+
+                ImageView invisi = findViewById(R.id.sauce);
+                invisi.setImageAlpha(0);
+                invisi = findViewById(R.id.mozz);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.parm);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.ched);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.pepL);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.pepR);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.pepE);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.pponiL);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.pponiR);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.pponiE);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.mushL);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.mushR);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.mushE);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.slices);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.SauceFaceWin);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.CheeseFaceWin);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.ToppingsFaceWin);
+                invisi.setVisibility(View.INVISIBLE);
+                invisi = findViewById(R.id.SlicesFaceWin);
+                invisi.setVisibility(View.INVISIBLE);
+
+
+
+            }
+        });
+        winNote.create().show();
     }
 }
 
@@ -395,3 +532,4 @@ public class MainActivity extends AppCompatActivity {
 //https://stackoverflow.com/questions/8878015/return-true-or-false-randomly/8878065
 //https://stackoverflow.com/questions/32837783/convert-double-to-float-in-java
 //https://stackoverflow.com/questions/6780981/android-radiogroup-how-to-configure-the-event-listener
+//https://www.youtube.com/watch?v=men8GB-7yM0

@@ -20,22 +20,25 @@
 
     <ImageView
         android:id="@+id/base"
-        android:layout_width="368dp"
-        android:layout_height="342dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@string/image"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
         app:srcCompat="@drawable/base" />
 
     <ImageView
         android:id="@+id/sauce"
-        android:layout_width="347dp"
-        android:layout_height="328dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:alpha="0"
+        android:alpha="1"
         android:contentDescription="@string/image"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
@@ -47,11 +50,12 @@
 
     <ImageView
         android:id="@+id/mozz"
-        android:layout_width="419dp"
-        android:layout_height="305dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintStart_toStartOf="@+id/base"
         app:layout_constraintTop_toTopOf="@+id/base"
@@ -59,35 +63,41 @@
 
     <ImageView
         android:id="@+id/parm"
-        android:layout_width="416dp"
-        android:layout_height="320dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
         app:srcCompat="@drawable/parmesan" />
 
     <ImageView
         android:id="@+id/ched"
-        android:layout_width="342dp"
-        android:layout_height="322dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/cheddar" />
 
     <ImageView
         android:id="@+id/pponiL"
-        android:layout_width="287dp"
-        android:layout_height="265dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
@@ -95,25 +105,25 @@
 
     <ImageView
         android:id="@+id/pponiR"
-        android:layout_width="297dp"
-        android:layout_height="293dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/mozz"
-        app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
-        app:layout_constraintVertical_bias="0.469"
         app:srcCompat="@drawable/pepperoni_regular" />
 
     <ImageView
         android:id="@+id/pponiE"
-        android:layout_width="339dp"
-        android:layout_height="295dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/mozz"
         app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,11 +133,12 @@
 
     <ImageView
         android:id="@+id/mushL"
-        android:layout_width="299dp"
-        android:layout_height="282dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
@@ -135,11 +146,12 @@
 
     <ImageView
         android:id="@+id/mushR"
-        android:layout_width="299dp"
-        android:layout_height="278dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,11 +161,12 @@
 
     <ImageView
         android:id="@+id/mushE"
-        android:layout_width="298dp"
-        android:layout_height="295dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintHorizontal_bias="0.685"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,11 +176,12 @@
 
     <ImageView
         android:id="@+id/pepL"
-        android:layout_width="264dp"
-        android:layout_height="264dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
@@ -175,11 +189,12 @@
 
     <ImageView
         android:id="@+id/pepR"
-        android:layout_width="282dp"
-        android:layout_height="276dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/mozz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
@@ -187,11 +202,12 @@
 
     <ImageView
         android:id="@+id/pepE"
-        android:layout_width="304dp"
-        android:layout_height="290dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/base"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
@@ -199,23 +215,28 @@
 
     <ImageView
         android:id="@+id/slices"
-        android:layout_width="381dp"
-        android:layout_height="356dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/image"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/base"
-        app:layout_constraintEnd_toEndOf="@+id/base"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/base"
         app:srcCompat="@drawable/slices8" />
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="341dp"
-        android:layout_height="352dp"
+        android:layout_width="306dp"
+        android:layout_height="286dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/base"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/pponiE"
         app:layout_constraintTop_toBottomOf="@+id/Title">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -237,7 +258,7 @@
                 android:layout_width="271dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="48dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="#CE1D1B1B"
                 android:indeterminate="false"
                 android:indeterminateTint="#E73737"

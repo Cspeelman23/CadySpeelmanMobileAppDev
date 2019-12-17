@@ -3,6 +3,8 @@ package com.example.cadyfinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,9 +13,14 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
     private Spinner locationSpinner;
@@ -21,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView result;
     private String Btype = "meat";
     private String tacoOrBurrito = "notSelected";
+    private String foodPlaceURL = "https://en.wikipedia.org/wiki/Burrito";
+    private Switch glutenSwitch;
     public ImageView burritoPic;
     public ImageView tacoPic;
 
@@ -34,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.resultBox);
         burritoPic = findViewById(R.id.burritoPic); //Android Studio told me it needs to be final
         tacoPic = findViewById(R.id.tacoPic); //Android Studio told me it needs to be final
+        glutenSwitch = findViewById(R.id.glutenSwitch);
+
+        //FAB to external page
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {loadWebSite(view);    }
+        });
+
         //burrito or taco radio buttons
         RadioGroup burrOrTaco = findViewById(R.id.typeGroup);
         burrOrTaco.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -95,28 +113,45 @@ public class MainActivity extends AppCompatActivity {
             switch (place){
                 case "The Hill":
                     bestPlace = "Illegal Petes";
+                    foodPlaceURL = "https://www.illegalpetes.com";
                     break;
                 case "29th Street":
                     bestPlace = "Chipotle";
+                    foodPlaceURL = "https://www.chipotle.com";
                     break;
                 case "Pearl Street":
                     bestPlace = "Bartaco";
+                    foodPlaceURL = "https://bartaco.com";
                     break;
                 default:
                     bestPlace = "GhostTown"; //shouldn't be possible, widgets come in initialized
             }
 
+        //switch for gluten
+        //https://abhiandroid.com/ui/switch
+
+        String gluten;
+        Boolean switchState = glutenSwitch.isChecked();
+            if(switchState){ //if toggled on
+                gluten = "gluten-free ";
+            }else{
+                gluten = ""; //regular
+            }
+
+
 //        //string user name
         EditText userName = findViewById(R.id.userName);
         String builder = userName.getText().toString();
 
+
+
         //set text results if radio buttons are selected
         if(burritoOrTacoIsSelected) {
-            result.setText("Hi " +builder + "! If you would like a " + Btype + " " + tacoOrBurrito + " on " + place +", you should check out " + bestPlace + ".");
+            result.setText("Hi " +builder + "! If you would like an awesome " + gluten + Btype + " " + tacoOrBurrito + " on " + place +", you should check out " + bestPlace + ".");
         }else{
             //toast if radio buttons not selected
             Context context = getApplicationContext();
-            CharSequence text = "Please select burrito or taco";
+            CharSequence text = "Please select either Burrito or Taco";
             int duration = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
@@ -125,5 +160,11 @@ public class MainActivity extends AppCompatActivity {
             tacoPic.setVisibility(View.INVISIBLE);//hide taco img
             burritoPic.setVisibility(View.INVISIBLE);//hide burrito img
         }
+    }
+
+    private void loadWebSite(View view){
+        Intent intent = new Intent((Intent.ACTION_VIEW));
+        intent.setData(Uri.parse(foodPlaceURL));
+        startActivity(intent);
     }
 }

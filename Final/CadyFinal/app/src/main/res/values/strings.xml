@@ -8,4 +8,9 @@
     <string name="burrito">Burrito</string>
     <string name="taco">Taco</string>
     <string name="name">Your Name</string>
+    <string-array name="locationSpinner">
+        <item>The Hill</item>
+        <item>29th Street</item>
+        <item>Pearl Street</item>
+    </string-array>
 </resources>

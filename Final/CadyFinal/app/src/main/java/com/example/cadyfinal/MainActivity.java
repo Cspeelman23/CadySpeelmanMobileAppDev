@@ -16,7 +16,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
-    private Spinner sizeClass;
+    private Spinner locationSpinner;
     private ToggleButton toggleMeat;
     private TextView result;
     private String Btype = "meat";
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //get views
         toggleMeat = findViewById(R.id.toggleMeat);
-        //sizeClass = findViewById(R.id.spinner);
+        locationSpinner = findViewById(R.id.locSpinner);
         result = findViewById(R.id.resultBox);
         burritoPic = findViewById(R.id.burritoPic); //Android Studio told me it needs to be final
         tacoPic = findViewById(R.id.tacoPic); //Android Studio told me it needs to be final
@@ -89,47 +89,38 @@ public class MainActivity extends AppCompatActivity {
             Btype = "meat";
         }
 
+        //location spinner
+        String place = String.valueOf(locationSpinner.getSelectedItem());
+        String bestPlace;
+            switch (place){
+                case "The Hill":
+                    bestPlace = "Illegal Petes";
+                    break;
+                case "29th Street":
+                    bestPlace = "Chipotle";
+                    break;
+                case "Pearl Street":
+                    bestPlace = "Bartaco";
+                    break;
+                default:
+                    bestPlace = "GhostTown"; //shouldn't be possible, widgets come in initialized
+            }
 
-
-
-        //spinner size
-//        String sizeLevel = String.valueOf(sizeClass.getSelectedItem());
-//        //string buddy type
-//        String buddy;
 //        //string user name
         EditText userName = findViewById(R.id.userName);
         String builder = userName.getText().toString();
 
-//
-//        if (noiseLevel) {//yes, is noisy
-//            switch (sizeLevel) {
-//                case "Small":
-//                    buddy = "Parakeet";
-//                    break;
-//                case "Medium":
-//                    buddy = "Duck";
-//                    break;
-//                case "Large":
-//                    buddy = "Seal";
-//                    break;
-//                default:
-//                    buddy = "Ghost"; //shouldn't be possible, widgets come in initialized
-//            }
-//        }
-
-//        Context context = getApplicationContext();
-//        CharSequence text = "We've picked your companion!";
-//        int duration = Toast.LENGTH_SHORT;
-//
-//        Toast toast = Toast.makeText(context, text, duration);
-//        toast.show();
-//
-//        ImageView buddyFace = findViewById(R.id.buddy);
-//        buddyFace.setVisibility(View.VISIBLE);
+        //set text results if radio buttons are selected
         if(burritoOrTacoIsSelected) {
-            result.setText(builder + " would like a " + Btype + " " + tacoOrBurrito);
+            result.setText("Hi " +builder + "! If you would like a " + Btype + " " + tacoOrBurrito + " on " + place +", you should check out " + bestPlace + ".");
         }else{
-            //toast
+            //toast if radio buttons not selected
+            Context context = getApplicationContext();
+            CharSequence text = "Please select burrito or taco";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+
             Log.i("test","in toast area");
             tacoPic.setVisibility(View.INVISIBLE);//hide taco img
             burritoPic.setVisibility(View.INVISIBLE);//hide burrito img

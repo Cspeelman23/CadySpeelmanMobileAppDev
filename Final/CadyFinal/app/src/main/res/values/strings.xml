@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CadyFinal</string>
+    <string name="title">Burrito Builder</string>
+    <string name="build">Build!</string>
+    <string name="meat">Meat</string>
+    <string name="veg">Veggie</string>
+    <string name="gluswitch">Gluten-Free?</string>
+    <string name="burrito">Burrito</string>
+    <string name="taco">Taco</string>
+    <string name="name">Your Name</string>
+</resources>
